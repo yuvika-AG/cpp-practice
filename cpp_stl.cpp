@@ -160,7 +160,8 @@ deque<int> dq;
   mpp[1]=2;//in the key 1 store 2
   mpp.insert({1,2});
   mpp.emplace(3,2);
-
+//in map the key datatype can be any even pair 
+ // unordered map these are just not sorted but the key datatype are limited  like only int,long,string,char all of these   
 //multimap-duplicate keys are allowed
 auto it =mpp.find(1);//this will give a iterator that eill point towards 3  *(it).second will give 2
 
