@@ -131,12 +131,72 @@ deque<int> dq;
     cout<< "Top (min): " << minpq.top() << endl; // 2    
 
 // set- it is sorted the values in it will not repeat 
-  set<int> st;
-    st.insert(2);
+   set<int> stt;
+  stt.insert(5);
+  stt.insert(1);
+  stt.insert(3);
+  stt.insert(3); // duplicate  ignored
 
+   auto it = stt.find(3);//If found → iterator to element If not → st.end()
+
+   stt.erase(3);       // remove value
+   //stt.erase(it);      // remove using iterator
+
+//multiset - allows duplicate but still sorted
+
+  multiset<int> ms;
+  ms.insert(1); // {1}
+  ms.insert(1); // {1, 1}
+  ms.insert(1); // {1, 1, 1}
+  
+  ms.erase(1);//remove all occurences
+  int cnt = ms.count(1);// returns how many times 1 appears
+  ms.erase(ms.find(1));// remove only one occurence 
+
+  //unordered_set-does not store in any order
+
+  //map - key value pair and the datatype can be any , no duplicate key, will be sorted
+  map<int,int>mpp;
+  mpp[1]=2;//in the key 1 store 2
+  mpp.insert({1,2});
+  mpp.emplace(3,2);
+
+//multimap-duplicate keys are allowed
+auto it =mpp.find(1);//this will give a iterator that eill point towards 3  *(it).second will give 2
+
+
+
+
+
+
+
+// if we have an array {1,5,3,4} for you to sort this sort(a,a+4) a+4 is write after the 4 
+// descending order-sort(a,a+n,greater<int>)
+//now if we wnat to sort according to us we have to use  sort(a,a+4,comp)where comparator is 
+//a booleanoperator which we have to write such that it only return true or false 
+
+
+int num=7;
+int cnt=__builtin_popcount(num);//this will give no. of set bits that means no. of 1's in binary format
+//if datatype is longlong then the built in funtion is __builtin_popcountll
+
+/*this will give all the permutations of the string but one thing to remember is that
+the string should in sorted manner to print all the permutations */
+
+string s = "123";
+
+do {
+    cout << s << endl;
+} while(next_permutation(s.begin(), s.end()));
+
+
+// to get the max element in an array 
+// int maxi=*max_element(a,a+n); this will give iterator of the max element and the *will give the element
 
 
     return 0;
 
 }
+
+
 
